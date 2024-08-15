@@ -151,3 +151,16 @@ dmypy.json
 cython_debug/
 
 .DS_Store
+
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Local .terraform directories
+.terraform/
+
+# Terraform variable files (can be sensitive)
+*.tfvars
