@@ -1,6 +1,11 @@
 from pathlib import Path
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,11 +51,11 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':     os.getenv("DB_NAME", None),     # name from main.tf
-        'USER':     os.getenv("DB_USER_NM", None),  # username from main.tf
-        "PASSWORD": os.getenv("DB_USER_PW", None),  # TF_VAR_db_password
-        "HOST":     os.getenv("DB_IP", None),     # RDS hostname from above image
-        "PORT":     os.getenv("DB_PORT", None)                           # default PostgreSQL port
+        'NAME':     os.getenv("DB_NAME",),     # name from main.tf
+        'USER':     os.getenv("DB_USER_NM"),  # username from main.tf
+        "PASSWORD": os.getenv("DB_USER_PW"),  # TF_VAR_db_password
+        "HOST":     os.getenv("DB_IP"),     # RDS hostname from above image
+        "PORT":     os.getenv("DB_PORT")                           # default PostgreSQL port
     }
 }
 
