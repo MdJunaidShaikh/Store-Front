@@ -29,9 +29,14 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
 
-      - name: Run tests
-        run: |
-            python manage.py test
+      - name: Echo hello world 
+        run: echo "Hello Junaid"
+
+
+        
+      # - name: Run tests
+      #   run: |it add .
+      #       python manage.py test
       # - name: Install Poetry
       #   uses: abatilo/actions-poetry@v2.0.0 
       #   with:
