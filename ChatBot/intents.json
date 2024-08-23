@@ -1,0 +1,35 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good afternoon", "Good evening"],
+        "responses": ["Hello!", "Hi there!", "Greetings!", "Good to see you!", "Hey! How can I assist you today?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "Goodbye", "See you later", "Take care"],
+        "responses": ["Goodbye!", "See you later!", "Take care!", "Have a great day!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "Appreciate it", "Thanks a lot"],
+        "responses": ["You're welcome!", "No problem!", "Anytime!", "Glad to help!"]
+      },
+      {
+        "tag": "name",
+        "patterns": ["What's your name?", "Who are you?", "Tell me your name"],
+        "responses": ["I'm your friendly chatbot!", "You can call me Chatbot.", "I'm here to assist you, call me Chatbot."]
+      },
+      {
+        "tag": "help",
+        "patterns": ["Help", "I need help", "Can you help me?", "Assist me"],
+        "responses": ["Sure, I'm here to help! What do you need assistance with?", "How can I assist you today?", "I'm here to help. What do you need?"]
+      },
+      {
+        "tag": "fallback",
+        "patterns": [],
+        "responses": ["I'm not sure I understand. Can you please rephrase?", "I'm sorry, I didn't get that. Can you try again?", "Can you please clarify your request?"]
+      }
+    ]
+  }
+  
