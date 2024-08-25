@@ -172,4 +172,3 @@ terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/
 
 
 .vars.tf
-.env
