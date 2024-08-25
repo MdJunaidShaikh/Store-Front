@@ -1,2 +1,5 @@
-secret_key = "8eQkzALyE0rYXvb+8sXUZkpjw7NfMVljCaVdWp2W"
-db_password = "pass1234"
+# AWS region
+AWS_REGION = "us-east-1"
+
+# database password
+db_password = "pass123"
