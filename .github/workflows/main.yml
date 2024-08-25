@@ -12,7 +12,10 @@ on:
 jobs:
   build:
     # name: Quality Assurance 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy :
+      matrix:
+        os:  [Windows_OS, Linux_OS , Mac_OS]
     # container: python:3.12.2-slim-bullseye
 
     steps: 
@@ -29,11 +32,32 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
 
-      - name: Echo hello world 
-        run: echo "Hello Junaid"
+      - name: Log in to Amazon ECR
+        env:
+          AWS_REGION: 
+        run: |
+          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 891376989340.dkr.ecr.$AWS_REGION.amazonaws.com
+
+      - name: Build Docker image
+        run: |
+          docker build -t 891376989340.dkr.ecr.us-east-1.amazonaws.com/django-ec2-complete .
+
+      - name: Tag Docker image
+        env:
+          AWS_REGION: us-east-1 # Update this to your desired AWS region
+        run: |
+          docker tag 891376989340.dkr.ecr.us-east-1.amazonaws.com/django-ec2-complete:latest
+
+      - name: Push Docker image to ECR
+        env:
+          AWS_REGION: us-east-1 # Update this to your desired AWS region
+        run: |
+          docker push 891376989340.dkr.ecr.us-east-1.amazonaws.com/django-ec2-complete:latest
+
+      - name: Echo deployment complete
+        run: echo "Docker image has been pushed to Amazon ECR"
 
 
-        
       # - name: Run tests
       #   run: |it add .
       #       python manage.py test

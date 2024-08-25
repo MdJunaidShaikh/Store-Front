@@ -161,7 +161,7 @@ cython_debug/
 
 # Local .terraform directories
 .terraform/
-
+.terraform/vars.tf
 # Terraform variable files (can be sensitive)
 *.tfvars
 
@@ -170,5 +170,6 @@ terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/
 .terraform/providers/registry.terraform.io/hashicorp/aws/5.60.0/darwin_arm64/terraform-provider-aws_v5.60.0_x5
 .terraform/
 
-.var.tf
+
+.vars.tf
 .env
