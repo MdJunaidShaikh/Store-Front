@@ -12,11 +12,7 @@ on:
 jobs:
   build:
     # name: Quality Assurance 
-    runs-on: ${{ matrix.os }}
-    strategy :
-      matrix:
-        os:  [Windows_OS, Linux_OS , Mac_OS]
-    # container: python:3.12.2-slim-bullseye
+    runs-on: ubuntu-latest
 
     steps: 
       - name : Checkout code
